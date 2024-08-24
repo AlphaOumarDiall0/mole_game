@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Jeu du Coup de Marteau</title>
+  </head>
+  <body>
+    <div class="game-container">
+      <button class="" id="guide">?</button> 
+
+      <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <h1>Comment fonctionne ce jeu ?</h1>
+        <h2>1.Démarrage</h2>
+        <p>Cliquez sur "Démarrer le jeu" pour lancer la partie. Vous
+          aurez 30 secondes pour attraper un maximum de taupes
+        </p>
+        <h2>2.Attraper les taupes</h2>
+        <p>Les taupes apparaissent aléatoirement dans les trous. Cliquez
+          dessus dès qu'elles apparaissent pour marquer des points.
+        </p>
+        <h2>3.Score</h2>
+        <p>
+          Chaque taupe attrapée ajoute un point à votre score. Le score est
+          affiché en haut de l'écran.
+        </p>
+        <h2>4.Fin du jeu</h2>
+        <p>
+          Lorsque le temps est écoulé,le jeu se termine. Vous pouvez relancer le jeu en cliquant sur
+          "Relancer le jeu".
+        </p>
+        <p>  
+          Amusez-vous bien !
+        </p>
+      </div>
+      <div class="overlay hidden"></div>
+
+      <!-- Tableau de bord pour afficher le score actuel -->
+      <div class="score-board-high">
+        HighScore : <span id="highScore">0</span>
+      </div>
+      <div class="score-board">Score : <span id="score">0</span></div>
+
+      <!-- Grille où les taupes apparaîtront -->
+      <div class="grid">
+        <div class="hole" id="hole1">
+          <img src="hole.png" alt="Trou" />
+          <img src="mole.png" alt="Taupe" class="mole hidden" id="mole1" />
+        </div>
+        <div class="hole" id="hole2">
+          <img src="hole.png" alt="Trou" />
+          <img src="mole.png" alt="Taupe" class="mole hidden" id="mole2" />
+        </div>
+        <div class="hole" id="hole3">
+          <img src="hole.png" alt="Trou" />
+          <img src="mole.png" alt="Taupe" class="mole hidden" id="mole3" />
+        </div>
+        <div class="hole" id="hole4">
+          <img src="hole.png" alt="Trou" />
+          <img src="mole.png" alt="Taupe" class="mole hidden" id="mole4" />
+        </div>
+        <div class="hole" id="hole5">
+          <img src="hole.png" alt="Trou" />
+          <img src="mole.png" alt="Taupe" class="mole hidden" id="mole5" />
+        </div>
+        <div class="hole" id="hole6">
+          <img src="hole.png" alt="Trou" />
+          <img src="mole.png" alt="Taupe" class="mole hidden" id="mole6" />
+        </div>
+        <div class="hole" id="hole7">
+          <img src="hole.png" alt="Trou" />
+          <img src="mole.png" alt="Taupe" class="mole hidden" id="mole7" />
+        </div>
+        <div class="hole" id="hole8">
+          <img src="hole.png" alt="Trou" />
+          <img src="mole.png" alt="Taupe" class="mole hidden" id="mole8" />
+        </div>
+        <div class="hole" id="hole9">
+          <img src="hole.png" alt="Trou" />
+          <img src="mole.png" alt="Taupe" class="mole hidden" id="mole9" />
+        </div>
+      </div>
+
+      <!-- Bouton pour démarrer le jeu -->
+      <button id="start-btn">Démarrer le Jeu</button>
+
+      <div>
+        <span class="finish hidden">Le jeu est est terminé</span>
+      </div>
+      <!-- Affichage du minuteur -->
+      <div class="timer">
+        Temps restant : <span id="time-left">30</span> secondes
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

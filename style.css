@@ -1,0 +1,168 @@
+/* Importation des polices Google */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&family=Raleway:wght@400;700&display=swap");
+
+/* Réinitialisation de base pour supprimer les marges et les paddings de tous les éléments */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Arrière-plan coloré et alignement centré avec des couleurs terreuses */
+body {
+  background-color: #e1c699; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Ubuntu", sans-serif; 
+}
+
+/* Conteneur qui contient tout le jeu */
+.game-container {
+  position:  relative; 
+  text-align: center;
+  background-color: #f8e9c1; 
+  border: 5px solid #a0522d; 
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+/* Style pour le tableau de score */
+.score-board {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #3b3a36; 
+  font-family: "Roboto", sans-serif; 
+}
+/* Disposition de la grille pour les trous */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 15px;
+  margin-bottom: 1.5rem;
+}
+
+/* Style pour chaque trou */
+.hole {
+  width: 100px;
+  height: 100px;
+  background-color: #8b5e3c; 
+  border-radius: 50%;
+  position: relative;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Cache la taupe par défaut */
+.hidden {
+  display: none;
+}
+.finish.hidden {
+  display: none;
+}
+
+/* Affiche la taupe lorsqu'elle est active */
+.mole {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+/* Bouton pour démarrer le jeu avec un style plus vibrant */
+#start-btn {
+  padding: 12px 25px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  background-color: #d2691e; 
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-family: "Ubuntu", sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+#guide{
+  font-size: 1rem;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: #d2691e; 
+  border: 1px solid #d2691e;
+  color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: background-color 0.3s ease;
+}
+#start-btn:hover {
+  background-color: #8b4513; 
+}
+#guide:hover {
+  background-color: #8b4513; 
+}
+
+/* Style pour l'affichage du minuteur */
+.timer {
+  font-size: 1.8rem;
+  color: #3b3a36; 
+  font-family: "Roboto", sans-serif;
+}
+.finish {
+  font-size: 1.6rem;
+  color: #d2691e; 
+  font-family: "Roboto", sans-serif;
+}
+
+/* Stylisation du modal */
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.8rem;
+  color: #d2691e;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+
+  background-color: white;
+  padding: 1.6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px); 
+  z-index: 5;
+}
+
