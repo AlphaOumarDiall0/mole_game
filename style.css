@@ -58,9 +58,7 @@ body {
 .hidden {
   display: none;
 }
-.finish.hidden {
-  display: none;
-}
+
 
 /* Affiche la taupe lorsqu'elle est active */
 .mole {
