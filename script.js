@@ -43,7 +43,11 @@ let finishTime = false;
 let score = 0;
 let timeLeft = 30;
 let higthScore = 0;
-
+// Création des fichiers audios
+const startSound = new Audio('audio/Message-notification.mp3')
+const clickSound = new Audio('audio/Tongue-clicking-sound.mp3')
+const congratulationSound = new Audio('audio/Congratulations-sound.mp3')
+const endGameSound = new Audio('audio/Game-ending-sound-effect.mp3')
 // Fonction pour choisir aléatoirement un trou
 function randomHole(holes) {
   const indexHole = Math.trunc(Math.random() * holsEl.length);
@@ -85,9 +89,9 @@ const timer = function () {
       if (score > higthScore) {
         higthScore = score;
         heigthScore.textContent = higthScore;
+        congratulationSound.play()
       }
-
-      // Ajout d'un son de fin de jeu
+      endGameSound.play()
     }
   }, 1000);
 };
@@ -100,7 +104,7 @@ const startGame = function () {
   timeLeft = 30;
   timeLeftDiplay.textContent = timeLeft;
   scoreEl.textContent = score;
-
+  startSound.play()
   showMole();
   timer();
 
@@ -117,6 +121,7 @@ molsEl.forEach((mole) => {
     score++;
     mole.classList.add("hidden");
     scoreEl.textContent = score;
+    clickSound.play()
   });
 });
 
