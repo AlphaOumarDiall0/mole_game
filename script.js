@@ -99,10 +99,10 @@ const timer = function () {
 // Ajout d'un evenement de click sur chaque taupe
 molsEl.forEach((mole) => {
   mole.addEventListener("click", function () {
-    // Ajout du son sur chaque clic
     score++;
     mole.classList.add("hidden");
     scoreEl.textContent = score;
+    // Ajout du son sur chaque clic
     clickSound.play()
   });
 });
