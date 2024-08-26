@@ -95,23 +95,6 @@ const timer = function () {
   }, 1000);
 };
 
-// Fonctio pour demarrer le jeu
-const startGame = function () {
-  scoreEl.textContent = 0;
-  score = 0;
-  finishTime = false;
-  timeLeft = 30;
-  timeLeftDiplay.textContent = timeLeft;
-  scoreEl.textContent = score;
-  startSound.play()
-  showMole();
-  timer();
-
-  finish.classList.add("hidden");
-  startBtn.disabled = true;
-  btnsOpenModal.disabled = true;
-  //   startBtn.classList.add("hidden");
-};
 
 // Ajout d'un evenement de click sur chaque taupe
 molsEl.forEach((mole) => {
@@ -124,4 +107,17 @@ molsEl.forEach((mole) => {
   });
 });
 
-startBtn.addEventListener("click", startGame);
+startBtn.addEventListener("click", function(){
+  scoreEl.textContent = 0;
+  score = 0;
+  finishTime = false;
+  timeLeft = 30;
+  timeLeftDiplay.textContent = timeLeft;
+  scoreEl.textContent = score;
+  startSound.play()
+  showMole();
+  timer();
+  finish.classList.add("hidden");
+  startBtn.disabled = true;
+  btnsOpenModal.disabled = true;
+});
